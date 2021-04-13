@@ -42,6 +42,7 @@ public class Main {
 			content += f.printCpp() + "\n\n";
 		}
 		
+		content += "\n\n Check out the code at: https://github.com/janderson2024/C-_File_Gen.git";
 		write(dest + className + ".cpp", content);
 	}
 	public static void writeToH(String dest, String className, ArrayList<Var> attributes, ArrayList<Function> funct) {
@@ -65,6 +66,7 @@ public class Main {
 		
 		
 		content += "};\n#endif";
+		content += "\n\n Check out the code at: https://github.com/janderson2024/C-_File_Gen.git";
 		write(dest + className + ".h", content);
 	}
 	
