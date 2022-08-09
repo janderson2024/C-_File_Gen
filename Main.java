@@ -26,14 +26,14 @@ public class Main {
 		Functions.get(1).addVar(new Var("int", "timeToEat"));
 		Functions.get(1).addVar(new Var("std::string", "foodType"));
 
-		writeToCpp(dirLocation, className, Functions);
-		writeToH(dirLocation, className, AttributeList, Functions);
+		writeToCpp(className, Functions);
+		writeToH(className, AttributeList, Functions);
 		
 		//TODO: INCLUDES LIST
 
 	}
 	
-	public static void writeToCpp(String dest, String className, ArrayList<Function> functions) {
+	public static void writeToCpp(String className, ArrayList<Function> functions) {
 		String content = "";
 		content += topComment;
 		content += "#include \"" + className + ".h\" \n\n\n";
@@ -42,10 +42,10 @@ public class Main {
 			content += f.printCpp() + "\n\n";
 		}
 		
-		content += "\n\n Check out the code at: https://github.com/janderson2024/C-_File_Gen.git";
-		write(dest + className + ".cpp", content);
+		content += "\n\n //Check out the code at: https://github.com/janderson2024/C-_File_Gen.git";
+		write(className + ".cpp", content);
 	}
-	public static void writeToH(String dest, String className, ArrayList<Var> attributes, ArrayList<Function> funct) {
+	public static void writeToH(String className, ArrayList<Var> attributes, ArrayList<Function> funct) {
 		String content = "";
 		content += topComment;
 		content += "#ifndef " + className + "_h\n#define " + className + "_h\n\n";
@@ -67,7 +67,7 @@ public class Main {
 		
 		content += "};\n#endif";
 		content += "\n\n Check out the code at: https://github.com/janderson2024/C-_File_Gen.git";
-		write(dest + className + ".h", content);
+		write(className + ".h", content);
 	}
 	
 	public static void write(String destination, String content) {
