@@ -15,4 +15,4 @@ Next is the Function Lists. This a list of Functions. A function is either a Con
     
 Finally writeToCpp handles writing the .cpp file and writeToH writes the .h file. 
 
-Both will create their files in the cpp_Gen folder.
+Both will create their files in the C-_File_Gen folder created when cloning the project
